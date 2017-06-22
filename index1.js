@@ -26,8 +26,17 @@ app.get('/', function (req, res) {
 app.post('/', function(req, res){
     newItem = req.body.todoListItem;
     let newObject = {listItem: newItem, completed: true};
+    console.log(newObject.completed);
     todos.push(newObject);
     res.redirect('/');
+});
+app.get('/marking/', function(req, res){
+  res.render('index', {checkBoxes: todos});
+});
+app.post('/marking/', function(req, res){
+    todos[0].completed = false;
+    console.log(todos);
+    res.redirect('/marking');
 });
 
 

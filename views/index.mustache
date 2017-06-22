@@ -33,7 +33,7 @@
     <div class="container">
       <ul>
         {{#checkBoxes}}
-        <form class="eachListItem">
+        <form action="/marking" method="post" class="eachListItem">
           <li>
             <button type="submit" name="button" class="button">Mark as complete</button>
             <label for="button">{{listItem}}</label>
@@ -45,9 +45,11 @@
     <div id="completedItemsContainer">
       <h1 id="completedItemsHeader">Completed Items</h1>
       <ul id="completedItems">
-        {{#checkboxes}}
-          <li>{{completed}}</li>
-        {{/checkboxes}}
+        {{#checkBoxes}}
+          {{^completed}}
+          <li>{{listItem}}</li>
+          {{/completed}}
+        {{/checkBoxes}}
       </ul>
     </div>
 
