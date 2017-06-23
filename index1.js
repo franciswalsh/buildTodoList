@@ -35,8 +35,8 @@ app.get('/marking/', function(req, res){
 });
 app.post('/marking/', function(req, res){
     todos[0].completed = false;
-    console.log(todos);
-    res.redirect('/marking');
+    console.log(req.body.todoListItem)
+    res.redirect('/');
 });
 
 

@@ -33,7 +33,7 @@
     <div class="container">
       <ul>
         {{#checkBoxes}}
-        <form action="/marking" method="post" class="eachListItem">
+        <form action="/marking" method="post" class="eachListItem" name="marking">
           <li>
             <button type="submit" name="button" class="button">Mark as complete</button>
             <label for="button">{{listItem}}</label>
