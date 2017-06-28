@@ -33,12 +33,12 @@
     <div class="container">
       <ul>
         {{#checkBoxes}}
-        <form action="/marking" method="post" class="eachListItem" name="marking">
+        <!-- <form action="/marking" method="post" class="eachListItem" name="marking"> -->
           <li>
-            <button type="submit" name="button" class="button">Mark as complete</button>
-            <label for="button">{{listItem}}</label>
+            <button type="submit" name="button" class="completeButton">Mark as complete</button>
+            <label for="button" class="itemValue">{{listItem}}</label>
           </li>
-        </form>
+        <!-- </form> -->
         {{/checkBoxes}}
       </ul>
     </div>
@@ -46,7 +46,7 @@
       <h1 id="completedItemsHeader">Completed Items</h1>
       <ul id="completedItems">
         {{#checkBoxes}}
-          {{^completed}}
+          {{#completed}}
           <li>{{listItem}}</li>
           {{/completed}}
         {{/checkBoxes}}
@@ -58,5 +58,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../data.js"></script>
   </body>
 </html>

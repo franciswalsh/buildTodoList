@@ -25,22 +25,26 @@ app.get('/', function (req, res) {
 });
 app.post('/', function(req, res){
     newItem = req.body.todoListItem;
-    let newObject = {listItem: newItem, completed: true};
+    let newObject = {listItem: newItem, completed: false};
     console.log(newObject.completed);
     todos.push(newObject);
     res.redirect('/');
 });
-app.get('/marking/', function(req, res){
-  res.render('index', {checkBoxes: todos});
-});
-app.post('/marking/', function(req, res){
-    todos[0].completed = false;
-    console.log(req.body.todoListItem)
-    res.redirect('/');
-});
+// app.get('/marking/', function(req, res){
+//   res.render('index', {checkBoxes: todos});
+// });
+// app.post('/marking/', function(req, res){
+//     todos[0].completed = false;
+//     console.log(req.body.todoListItem)
+//     res.redirect('/');
+// });
 
 
 
 app.listen(3000, function () {
   console.log('Successfully started express application!');
 });
+
+module.export = {
+  todos: todos
+}
